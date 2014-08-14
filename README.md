@@ -31,7 +31,7 @@ A Polymer interpretation of Dan Grossman's awesome bootstrap-daterangepicker (ht
   startDate="{{startDate}}" 
   endDate="{{endDate}}" 
   relatedTarget="{{$.triggerRange}}" 
-  opened="{{opened}}"/>
+  opened="false"/>
 ```
 
 ## Contributors
