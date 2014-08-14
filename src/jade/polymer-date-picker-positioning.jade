@@ -9,9 +9,7 @@ polymer-element(name="polymer-date-picker-positioning" attributes="relatedTarget
           window.addEventListener('resize', function() {
             self.reposition();
           });
-          window.addEventListener('load', function() {
-            self.reposition();
-          });
+          this.async(self.reposition);
         },
         closeCanceled: false,
         openedChanged: function(oldVal, newVal) {
@@ -19,7 +17,7 @@ polymer-element(name="polymer-date-picker-positioning" attributes="relatedTarget
           if (!this.clickListener) {
             this.clickListener = function(e) {
               var bound = picker.target.getBoundingClientRect();
-              setTimeout(function() {if (!picker.closeCanceled) picker.close(); else picker.closeCanceled = false}, 10);
+              picker.async(function() {if (!picker.closeCanceled) picker.close(); else picker.closeCanceled = false});
             };
             this.targetClickListener = function(e) {
               picker.closeCanceled = true;
@@ -29,7 +27,7 @@ polymer-element(name="polymer-date-picker-positioning" attributes="relatedTarget
           if (newVal == "true") {
             this.reposition();
             this.style.display = "";
-            setTimeout(function() {
+            this.async(function() {
               window.addEventListener('click', picker.clickListener, false);
               picker.target.addEventListener('click', picker.targetClickListener, false);
             }, 100);

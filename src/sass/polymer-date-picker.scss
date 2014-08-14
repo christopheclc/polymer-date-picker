@@ -3,6 +3,12 @@ polymer-date-picker-calendar {
   float: left;
 }
 
+#target {
+  font-family: Arial;
+  font-size: 14px;
+  z-index: 1000;
+}
+
 .daterangepicker {
   background-color: #FFFFFF;
   display: inline-block;
