@@ -6,6 +6,11 @@ A Polymer interpretation of Dan Grossman's awesome bootstrap-daterangepicker (ht
 ![alt-text](https://raw.githubusercontent.com/christopheclc/polymer-date-picker/master/docs/images/datepicker-with-range.png "Example of polymer-date-picker with range")
 
 ## Usage
+### Installation
+```bash
+bower install polyemr-date-picker
+```
+
 ### Import
 ```html
 <link rel="import" href="../polymer-date-picker/polymer-date-picker.html">
