@@ -19,7 +19,8 @@
     "bower_components",
     "test",
     "tests",
-    "src"
+    "src",
+    "docs"
   ],
   "dependencies": {
     "moment": "~2.8.1",
