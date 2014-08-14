@@ -1,0 +1,56 @@
+.calendar {
+  display: block;
+  margin: 4px;
+  max-width: 270px;
+  border: 1px solid #DDDDDD;
+  padding: 4px;
+  background: #FFFFFF;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    > thead > tr > th, > tbody > tr > td {
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      white-space: nowrap;
+      padding: 5px;
+    }
+    > thead > tr > th {
+      font-size-adjust: 0.488;
+    }
+    > tbody {
+      > tr {
+        > td {
+          &.disabled, &.off {
+            color: #999999;
+          }
+          &.available {
+            &:hover {
+              background: #EEEEEE;
+            }
+            & + &.start-date {
+              border-radius: 4px 0 0 4px;
+            }
+          }
+          &.start-date.end-date {
+            border-radius: 4px;
+          }
+          &.in-range {
+            background: #EBF4F8;
+            border-radius: 0;
+            & + &.end-date {
+              border-radius: 0 4px 4px 0;
+            }
+          }
+          &.active, &.active:hover {
+            background-color: #357EBD;
+            border-color: #3071a9;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

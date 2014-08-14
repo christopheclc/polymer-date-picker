@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      html, body {width: 100%; height: 100%; margin:0; padding:0; font-family: Arial; }
+      div.container { width: 980px; margin:50px auto 0; padding: 20px; height: 100%; border: 1px solid rgba(0, 0, 0, 0.15); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.17); }
+    </style>
+    <script src="../platform/platform.js"></script>
+    <link rel="import" href="polymer-date-picker.html">
+    <link rel="stylesheet" href="polymer-date-picker-container.css">
+    <!--container with input trigger-->
+    <polymer-element name="polymer-date-picker-trigger" attributes="range selectedDate startDate endDate halign opened">
+      <template>
+        <style>
+          input.date {border: 1px solid #DDDDDD; background-color: #EEEEEE; color:#555555; min-width: 200px; padding: 8px 10px; margin: 10px; border-radius: 4px; }
+          input.date:hover { cursor:pointer; border: 1px solid #44B4E4; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6); }
+        </style>
+        <template if="{{range != null}}">
+          <polymer-date-picker id="datePicker" range startDate="{{startDate}}" endDate="{{endDate}}" relatedTarget="{{$.triggerRange}}" opened="{{opened}}"></polymer-date-picker>
+          <input id="triggerRange" value="{{startDate}} to {{endDate}}" on-click="{{toggle}}" readonly class="date">
+        </template>
+        <template if="{{range == null}}">
+          <polymer-date-picker id="datePicker" selectedDate="{{selectedDate}}" relatedTarget="{{$.trigger}}" opened="{{opened}}"></polymer-date-picker>
+          <input id="trigger" value="{{selectedDate}}" on-click="{{toggle}}" readonly class="date">
+        </template>
+      </template>
+    </polymer-element>
+    <script>
+      Polymer('polymer-date-picker-trigger', {
+        toggle: function() {
+            this.$.datePicker.toggle();
+        },
+        open: function() {
+            this.$.datePicker.open();
+        }
+      });
+      
+    </script>
+  </head>
+  <body unresolved touch-action="auto">
+    <div class="container">
+      <h2>Datepicker container with input trigger</h2>
+      <polymer-date-picker-trigger range startDate="2014-08-01" endDate="2014-08-07" opened="true"></polymer-date-picker-trigger>
+      <h2>Datepicker container, not ranged</h2>
+      <polymer-date-picker-trigger selectedDate="2014-08-01" opened="false"></polymer-date-picker-trigger>
+    </div>
+  </body>
+</html>

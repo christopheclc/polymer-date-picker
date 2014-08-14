@@ -1,0 +1,28 @@
+{
+  "name": "polymer-date-picker",
+  "version": "0.0.1",
+  "authors": [
+    "Christophe Clapp <christophe@christophe.cc>",
+    "Christopher Hartmann herenow2121@gmail.com"
+  ],
+  "description": "A Polymer interpretation of Dan Grossman's awesome bootstrap-daterangepicker (https://github.com/dangrossman/bootstrap-daterangepicker)",
+  "keywords": [
+    "polymer",
+    "date",
+    "range",
+    "picker"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.8.1",
+    "platform": "Polymer/platform#~0.3.5",
+    "core-icon": "Polymer/core-icon#~0.3.5"
+  }
+}
