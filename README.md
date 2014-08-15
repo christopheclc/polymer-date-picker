@@ -61,18 +61,18 @@ This example will create a basic date picker with the value of `selectedDate` bo
 This example will create a range date picker that is opened by default.  The `startDate` and `endDate` values are bound to an input field which will also toggle the date picker on click.  The date picker will be positioned relative to the bottom right of the input field based on the `relatedTarget` and `halign` attributes.
 
 ### Options
-`range`: (boolean) Render a date picker with the option of choosing a range of dates.
-`startDate`: (string) The selected start date if the `range` option is enabled.
-`endDate`: (string) The selected end date if the `range` option is enabled.
-`selectedDate`: (string) The selected date if the `range` option is *not* enabled.
-`opened`: (boolean) Whether the date picker elements are currently showing.  Elements are by default rendered in an overlay that is controlled by this option.
-`halign`: (string|left,middle,right) The positioning of the date picker elements relative to your target element.  All vertical positioning will be at the bottom of the target.
-`relatedTarget`: (object) A Polymer selector identifying the element that will be used to control the date picker overlay.
+* `range`: (boolean) Render a date picker with the option of choosing a range of dates.
+* `startDate`: (string) The selected start date if the `range` option is enabled.
+* `endDate`: (string) The selected end date if the `range` option is enabled.
+* `selectedDate`: (string) The selected date if the `range` option is *not* enabled.
+* `opened`: (boolean) Whether the date picker elements are currently showing.  Elements are by default rendered in an overlay that is controlled by this option.
+* `halign`: (string|left,middle,right) The positioning of the date picker elements relative to your target element.  All vertical positioning will be at the bottom of the target.
+* `relatedTarget`: (object) A Polymer selector identifying the element that will be used to control the date picker overlay.
 
 ### Methods
-`$.datePicker.open`: Set the date picker `opened` attribute to true.
-`$.datePicker.close`: Set the date picker `opened` attribute to false.
-`$.datePicker.toggle`: Toggle the date picker `opened` attribute.
+* `$.datePicker.open`: Set the date picker `opened` attribute to true.
+* `$.datePicker.close`: Set the date picker `opened` attribute to false.
+* `$.datePicker.toggle`: Toggle the date picker `opened` attribute.
 
 ## Contributors
 - Christophe Clapp
