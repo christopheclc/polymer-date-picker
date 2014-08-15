@@ -3,7 +3,11 @@ polymer-date-picker
 
 A Polymer interpretation of Dan Grossman's awesome [bootstrap-daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker)
 
+### Screenshot with range
 ![alt-text](https://raw.githubusercontent.com/christopheclc/polymer-date-picker/master/docs/images/datepicker-with-range.png "Example of polymer-date-picker with range")
+
+### Screenshot without range
+![alt-text](https://raw.githubusercontent.com/christopheclc/polymer-date-picker/master/docs/images/datepicker-without-range.png "Example of polymer-date-picker without range")
 
 ### Installation
 1. Add the library to your project using the [Bower](http://bower.io/) package manager:
