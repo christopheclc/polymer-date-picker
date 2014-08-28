@@ -39,31 +39,37 @@
         this.startDate = this.format(moment());
         this.endDate = this.format(moment());
         this.selected = "today";
+        this.opened = false;
       },
       yesterdayClicked: function() {
         this.startDate = this.format(moment().subtract(1, "days"));
         this.endDate = this.format(moment().subtract(1, "days"));
         this.selected = "yesterday";
+        this.opened = false;
       },
       last7DaysClicked: function() {
         this.startDate = this.format(moment().subtract(6, "days"));
         this.endDate = this.format(moment());
         this.selected = "last7Days";
+        this.opened = false;
       },
       last30DaysClicked: function() {
         this.startDate = this.format(moment().subtract(30, "days"));
         this.endDate = this.format(moment());
         this.selected = "last30Days";
+        this.opened = false;
       },
       thisMonthClicked: function() {
         this.startDate = this.format(moment().startOf("month"));
         this.endDate = this.format(moment().endOf("month"));
         this.selected = "thisMonth";
+        this.opened = false;
       },
       lastMonthClicked: function() {
         this.startDate = this.format(moment().subtract(1, "months").startOf("month"));
         this.endDate = this.format(moment().subtract(1, "months").endOf("month"));
         this.selected = "lastMonth";
+        this.opened = false;
       },
       customClicked: function() {
         this.selected = "custom"
