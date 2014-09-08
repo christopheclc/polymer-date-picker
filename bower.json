@@ -24,8 +24,8 @@
   ],
   "dependencies": {
     "moment": "~2.8.1",
-    "platform": "Polymer/platform#~0.3.5",
-    "core-icon": "Polymer/core-icon#~0.3.5"
+    "platform": "Polymer/platform#>=0.4.0",
+    "core-icon": "Polymer/core-icon#>=0.4.0"
   },
   "repository": {
     "type": "git",
