@@ -31,35 +31,44 @@ polymer-element(name="polymer-date-picker", extends="polymer-date-picker-positio
         this.target = this.$.target;
         this.super();
       },
+      close: function() {
+        this.opened = false;
+      },
       todayClicked: function(e) {
         this.startDate = this.format(moment());
         this.endDate = this.format(moment());
         this.selected = "today";
+        this.close();
       },
       yesterdayClicked: function() {
         this.startDate = this.format(moment().subtract(1, "days"));
         this.endDate = this.format(moment().subtract(1, "days"));
         this.selected = "yesterday";
+        this.close();
       },
       last7DaysClicked: function() {
         this.startDate = this.format(moment().subtract(6, "days"));
         this.endDate = this.format(moment());
         this.selected = "last7Days";
+        this.close();
       },
       last30DaysClicked: function() {
         this.startDate = this.format(moment().subtract(30, "days"));
         this.endDate = this.format(moment());
         this.selected = "last30Days";
+        this.close();
       },
       thisMonthClicked: function() {
         this.startDate = this.format(moment().startOf("month"));
         this.endDate = this.format(moment().endOf("month"));
         this.selected = "thisMonth";
+        this.close();
       },
       lastMonthClicked: function() {
         this.startDate = this.format(moment().subtract(1, "months").startOf("month"));
         this.endDate = this.format(moment().subtract(1, "months").endOf("month"));
         this.selected = "lastMonth";
+        this.close();
       },
       customClicked: function() {
         this.selected = "custom"

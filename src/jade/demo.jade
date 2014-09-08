@@ -19,15 +19,15 @@ html(lang="en")
         template(if="{{range == null}}")
           polymer-date-picker(id="datePicker", selectedDate="{{selectedDate}}", relatedTarget="{{$.trigger}}", opened="{{opened}}")
           input(id="trigger", class="date", value="{{selectedDate}}", on-click="{{toggle}}", readonly)
-    script.
-        Polymer('polymer-date-picker-trigger', {
-          toggle: function() {
-              this.$.datePicker.toggle();
-          },
-          open: function() {
-              this.$.datePicker.open();
-          }
-        });
+      script.
+          Polymer('polymer-date-picker-trigger', {
+            toggle: function() {
+                this.$.datePicker.toggle();
+            },
+            open: function() {
+                this.$.datePicker.open();
+            }
+          });
 
   body(unresolved touch-action="auto")
     div(class="container")

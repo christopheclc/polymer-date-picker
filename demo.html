@@ -23,18 +23,18 @@
           <input id="trigger" value="{{selectedDate}}" on-click="{{toggle}}" readonly class="date">
         </template>
       </template>
+      <script>
+        Polymer('polymer-date-picker-trigger', {
+          toggle: function() {
+              this.$.datePicker.toggle();
+          },
+          open: function() {
+              this.$.datePicker.open();
+          }
+        });
+        
+      </script>
     </polymer-element>
-    <script>
-      Polymer('polymer-date-picker-trigger', {
-        toggle: function() {
-            this.$.datePicker.toggle();
-        },
-        open: function() {
-            this.$.datePicker.open();
-        }
-      });
-      
-    </script>
   </head>
   <body unresolved touch-action="auto">
     <div class="container">
