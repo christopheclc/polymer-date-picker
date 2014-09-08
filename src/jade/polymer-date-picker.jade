@@ -4,12 +4,12 @@ link(rel="import", href="polymer-date-picker-positioning.html")
 
 script(src="../moment/min/moment.min.js")
 
-polymer-element(name="polymer-date-picker", extends="polymer-date-picker-positioning", attributes="range selectedDate startDate endDate opened halign relatedTarget")
+polymer-element(name="polymer-date-picker", extends="polymer-date-picker-positioning", attributes="range selectedDate startDate endDate opened halign relatedTarget selected showRanges")
   template
     link(rel="stylesheet" href="polymer-date-picker.css")
     div(id="target" class="daterangepicker opensright")
       template(if="{{range != null}}")
-        div(class="ranges")
+        div(class="ranges" hidden?="{{!showRanges}}")
           ul
             li(on-click="{{todayClicked}}" class="{{ {active: (selected == 'today') } | tokenList }}") Today
             li(on-click="{{yesterdayClicked}}" class="{{ {active: (selected == 'yesterday') } | tokenList }}") Yesterday

@@ -15,7 +15,7 @@
           input.date:hover { cursor:pointer; border: 1px solid #44B4E4; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6); }
         </style>
         <template if="{{range != null}}">
-          <polymer-date-picker id="datePicker" range startDate="{{startDate}}" endDate="{{endDate}}" relatedTarget="{{$.triggerRange}}" opened="{{opened}}"></polymer-date-picker>
+          <polymer-date-picker id="datePicker" range startDate="{{startDate}}" endDate="{{endDate}}" relatedTarget="{{$.triggerRange}}" opened="{{opened}}" selected="custom"></polymer-date-picker>
           <input id="triggerRange" value="{{startDate}} to {{endDate}}" on-click="{{toggle}}" readonly class="date">
         </template>
         <template if="{{range == null}}">
