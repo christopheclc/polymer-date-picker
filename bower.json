@@ -1,6 +1,6 @@
 {
   "name": "polymer-date-picker",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "authors": [
     "Christophe Clapp <christophe@christophe.cc>",
     "Christopher Hartmann herenow2121@gmail.com"
@@ -25,18 +25,18 @@
   "dependencies": {
     "moment": "~2.8.1",
     "platform": "Polymer/platform#>=0.4.0",
-    "core-icon": "Polymer/core-icon#>=0.4.0"
+    "core-icon": "Polymer/core-icon#>=0.4.0",
+    "moment-timezone": "~0.2.2"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/christopheclc/polymer-date-picker.git"
   },
-  "main": [ 
+  "main": [
     "polymer-date-picker-calendar.css",
     "polymer-date-picker-calendar.html",
     "polymer-date-picker-container.css",
     "polymer-date-picker.css",
     "polymer-date-picker.html"
   ]
-  
 }
