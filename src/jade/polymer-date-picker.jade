@@ -36,8 +36,7 @@ polymer-element(name="polymer-date-picker", extends="polymer-date-picker-positio
         this.opened = false;
       },
       newMoment: function() {
-        if (this.timezone) return moment().tz(this.timezone);
-        else return moment();
+        return moment();
       },
       todayClicked: function(e) {
         this.startDate = this.format(this.newMoment());
@@ -79,6 +78,6 @@ polymer-element(name="polymer-date-picker", extends="polymer-date-picker-positio
         this.selected = "custom"
       },
       format: function(moment) {
-        return moment.format("YYYY-MM-DD");
+        return moment.tz(this.timezone).format("YYYY-MM-DD");
       }
     });
