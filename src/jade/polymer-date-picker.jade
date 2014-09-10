@@ -36,42 +36,42 @@ polymer-element(name="polymer-date-picker", extends="polymer-date-picker-positio
         this.opened = false;
       },
       newMoment: function() {
-        if (this.timezone) return this.format(moment().tz("America/New_York"));
-        else return this.format(moment());
+        if (this.timezone) return moment().tz(this.timezone);
+        else return moment();
       },
       todayClicked: function(e) {
-        this.startDate = this.newMoment();
-        this.endDate = this.newMoment();
+        this.startDate = this.format(this.newMoment());
+        this.endDate = this.format(this.newMoment());
         this.selected = "today";
         this.close();
       },
       yesterdayClicked: function() {
-        this.startDate = this.format(moment().subtract(1, "days"));
-        this.endDate = this.format(moment().subtract(1, "days"));
+        this.startDate = this.format(this.newMoment().subtract(1, "days"));
+        this.endDate = this.format(this.newMoment().subtract(1, "days"));
         this.selected = "yesterday";
         this.close();
       },
       last7DaysClicked: function() {
-        this.startDate = this.format(moment().subtract(6, "days"));
-        this.endDate = this.newMoment();
+        this.startDate = this.format(this.newMoment().subtract(6, "days"));
+        this.endDate = this.format(this.newMoment());
         this.selected = "last7Days";
         this.close();
       },
       last30DaysClicked: function() {
-        this.startDate = this.format(moment().subtract(30, "days"));
-        this.endDate = this.newMoment();
+        this.startDate = this.format(this.newMoment().subtract(30, "days"));
+        this.endDate = this.format(this.newMoment());
         this.selected = "last30Days";
         this.close();
       },
       thisMonthClicked: function() {
-        this.startDate = this.format(moment().startOf("month"));
-        this.endDate = this.format(moment().endOf("month"));
+        this.startDate = this.format(this.newMoment().startOf("month"));
+        this.endDate = this.format(this.newMoment().endOf("month"));
         this.selected = "thisMonth";
         this.close();
       },
       lastMonthClicked: function() {
-        this.startDate = this.format(moment().subtract(1, "months").startOf("month"));
-        this.endDate = this.format(moment().subtract(1, "months").endOf("month"));
+        this.startDate = this.format(this.newMoment().subtract(1, "months").startOf("month"));
+        this.endDate = this.format(this.newMoment().subtract(1, "months").endOf("month"));
         this.selected = "lastMonth";
         this.close();
       },
