@@ -1,5 +1,6 @@
 
 <link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="../core-style/core-style.html"/>
 <link rel="import" href="polymer-date-picker-calendar.html"/>
 <link rel="import" href="polymer-date-picker-positioning.html"/>
 <script src="../moment/min/moment.min.js"></script>
@@ -7,6 +8,7 @@
 <polymer-element name="polymer-date-picker" extends="polymer-date-picker-positioning" attributes="range selectedDate startDate endDate opened halign relatedTarget selected showRanges timezone">
   <template>
     <link rel="stylesheet" href="polymer-date-picker.css"/>
+    <core-style ref="polymer-date-picker"></core-style>
     <div id="target" class="daterangepicker opensright">
       <template if="{{range != null}}">
         <div hidden?="{{!showRanges}}" class="ranges">
