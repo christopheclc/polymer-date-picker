@@ -60,6 +60,9 @@ This example will create a basic date picker with the value of `selectedDate` bo
 
 This example will create a range date picker that is opened by default.  The `startDate` and `endDate` values are bound to an input field which will also toggle the date picker on click.  The date picker will be positioned relative to the bottom right of the input field based on the `relatedTarget` and `halign` attributes.
 
+### Theme
+The date picker can be themed by importing or including a core-style element in your application with an id of "polymer-date-picker".  Your core-style element should include a style block with any applicable CSS you would like applied to the date picker.
+
 ### Options
 * `range`: (boolean) Render a date picker with the option of choosing a range of dates.
 * `startDate`: (string) The selected start date if the `range` option is enabled.
