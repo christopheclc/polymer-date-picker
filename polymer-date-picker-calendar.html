@@ -45,7 +45,7 @@
         this.moveMonth(1);
       },
       dateClicked: function(e) {
-        var element = e.originalTarget ? e.originalTarget : e.toElement;
+        var element = e.originalTarget || e.toElement || e.srcElement;
         var row = element.getAttribute("row");
         var col = element.getAttribute("col");
         this.selectedDate = this.calendar[row][col].identifier;
