@@ -1,6 +1,6 @@
 
 <link rel="import" href="../core-icons/core-icons.html"/>
-<polymer-element name="polymer-date-picker-calendar" attributes="start end selectedDate startDate endDate">
+<polymer-element name="polymer-date-picker-calendar" attributes="start end selectedDate startDate endDate allowEmpty">
   <template>
     <link rel="stylesheet" href="polymer-date-picker-calendar.css"/>
     <div class="calendar">
@@ -29,8 +29,13 @@
   </template>
   <script>
     Polymer("polymer-date-picker-calendar", {
+      skipRebuild: false,
+      noDate: false,
       ready: function() {
-        if (!this.selectedDate) this.selectedDate = moment().format("YYYY-MM-DD");
+        if (!this.selectedDate) {
+	   this.selectedDate = moment().format("YYYY-MM-DD");
+	   this.noDate = this.allowEmpty;
+	}
         this.daysOfWeek = [0, 1, 2, 3, 4, 5, 6].map(function(n) {return moment().day(n).format("dd");});
         this.calendar = [];
       },
@@ -76,6 +81,10 @@
         }
       },
       rebuildCalendar: function() {
+        if (this.skipRebuild) {
+	   this.skipRebuild = false;
+	   return;
+	}
         this.calendar = [];
         this.firstOfMonth = moment([this.yearMonth.year, this.yearMonth.month, 1]);
         this.monthName = this.firstOfMonth.format("MMMM");
@@ -96,6 +105,11 @@
           });
           if ((i + 1) % 7 == 0) this.calendar.push(columns);
         }
+	if(this.noDate) {
+	    this.noDate = false;
+	    this.skipRebuild = true;
+	    this.selectedDate = undefined;
+	}
       }
     });
   </script>
